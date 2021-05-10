@@ -22,5 +22,9 @@
     <string name="item_label_local_time">Local Time</string>
     <string name="item_label_cet_time">CET Time</string>
     <string name="item_label_laps">Laps</string>
+    <string name="hint_category">Category Name</string>
+    <string name="hint_country">Country Name</string>
+    <string name="hint_track">Country Name</string>
+
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

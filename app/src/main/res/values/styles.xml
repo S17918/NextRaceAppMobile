@@ -8,7 +8,9 @@
     </style>
     <style name="TabsView">
         <item name="android:textColor">@color/colorText</item>
+        <item name="android:textColorPrimary">@color/colorText</item>
         <item name="android:textColorSecondary">@color/colorText</item>
+        <item name="android:textColorHint">@color/colorText</item>
         <item name="colorAccent">@color/colorRed</item>
     </style>
     <style name="NavigationView">

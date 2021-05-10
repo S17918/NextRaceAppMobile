@@ -10,7 +10,6 @@ import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import androidx.navigation.ui.NavigationUI
 import com.google.android.material.navigation.NavigationView
-import nextrace.app.fragments.MainPageFragment
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -53,11 +52,8 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 if(drawerLayout.isDrawerOpen(GravityCompat.START)){
                     drawerLayout.closeDrawer(GravityCompat.START)
                     true
-                }else{
-                    false
-                }
-            }
-            else -> super.onOptionsItemSelected(item)
+                } else false
+            } else -> super.onOptionsItemSelected(item)
         }
     }
 
