@@ -1,4 +1,4 @@
 package nextrace.app.models
 
-class Country {
+class Country(id: Int, name: String) {
 }

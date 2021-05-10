@@ -1,4 +1,4 @@
 package nextrace.app.models
 
-class Event {
+class Event(id: Int, type: String, date: String, localTime: String, cetTime: String, eventsList: Object) {
 }

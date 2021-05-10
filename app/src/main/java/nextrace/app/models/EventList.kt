@@ -1,4 +1,4 @@
 package nextrace.app.models
 
-class EventList {
+class EventList(id: Int, events: MutableList<Event>) {
 }
