@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/main_page_fragment">
+
+    <fragment
+        android:id="@+id/main_page_fragment"
+        android:name="nextrace.app.fragments.MainPageFragment"
+        android:label="@string/app_name"
+        tools:layout="@layout/fragment_main_page"/>
+
+    <fragment
+        android:id="@+id/all_races_fragment"
+        android:name="nextrace.app.fragments.AllRacesFragment"
+        android:label="@string/drawer_item_all_races"
+        tools:layout="@layout/fragment_all_races"/>
+
+    <fragment
+        android:id="@+id/search_fragment"
+        android:name="nextrace.app.fragments.SearchFragment"
+        android:label="@string/drawer_item_search"
+        tools:layout="@layout/fragment_search"/>
+
+    <fragment
+        android:id="@+id/formula_1_fragment"
+        android:name="nextrace.app.fragments.Formula1Fragment"
+        android:label="@string/drawer_item_formula_1"
+        tools:layout="@layout/fragment_formula1"/>
+
+    <fragment
+        android:id="@+id/formula_2_fragment"
+        android:name="nextrace.app.fragments.Formula2Fragment"
+        android:label="@string/drawer_item_formula_2"
+        tools:layout="@layout/fragment_formula2"/>
+
+    <fragment
+        android:id="@+id/formula_3_fragment"
+        android:name="nextrace.app.fragments.Formula3Fragment"
+        android:label="@string/drawer_item_formula_3"
+        tools:layout="@layout/fragment_formula3"/>
+
+    <fragment
+        android:id="@+id/formula_e_fragment"
+        android:name="nextrace.app.fragments.FormulaEFragment"
+        android:label="@string/drawer_item_formula_e"
+        tools:layout="@layout/fragment_formula_e"/>
+
+    <fragment
+        android:id="@+id/dtm_fragment"
+        android:name="nextrace.app.fragments.DtmFragment"
+        android:label="@string/drawer_item_dtm"
+        tools:layout="@layout/fragment_dtm"/>
+
+    <fragment
+        android:id="@+id/previous_races_fragment"
+        android:name="nextrace.app.fragments.PreviousRacesFragment"
+        android:label="@string/drawer_item_previous_races"
+        tools:layout="@layout/fragment_previous_races"/>
+
+    <fragment
+        android:id="@+id/about_fragment"
+        android:name="nextrace.app.fragments.AboutFragment"
+        android:label="@string/drawer_item_about"
+        tools:layout="@layout/fragment_about"/>
+
+    <fragment
+        android:id="@+id/donate_fragment"
+        android:name="nextrace.app.fragments.DonateFragment"
+        android:label="@string/drawer_item_donate"
+        tools:layout="@layout/fragment_donate"/>
+
+</navigation>
