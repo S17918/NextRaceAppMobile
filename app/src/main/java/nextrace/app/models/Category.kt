@@ -2,5 +2,5 @@ package nextrace.app.models
 
 import java.net.URL
 
-class Category(id: Int, categoryName: String, categoryLogo: URL, categoryCallendar: URL, categoryColor: String){
+class Category(val id: Int, val categoryName: String, val categoryLogo: URL, val categoryCallendar: URL, val categoryHexColor: String){
 }

@@ -71,4 +71,10 @@
         android:label="@string/drawer_item_donate"
         tools:layout="@layout/fragment_donate"/>
 
+    <fragment
+        android:id="@+id/race_details_fragment"
+        android:name="nextrace.app.fragments.RaceDetailsFragment"
+        android:label="@string/null_string"
+        tools:layout="@layout/fragment_race_details"/>
+
 </navigation>

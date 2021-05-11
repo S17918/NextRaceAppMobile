@@ -1,4 +1,4 @@
 package nextrace.app.models
 
-class Race(id: Int, category: Category, track: Track, laps: Int, name: String, tookPlace: Boolean, eventList: EventList) {
+class Race(val id: Int, val category: Category, val track: Track, val laps: Int, val raceName: String, val tookPlace: Boolean, val eventList: EventList) {
 }

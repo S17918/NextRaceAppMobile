@@ -36,14 +36,6 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
         drawerToggle.syncState()
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
-        supportActionBar!!.subtitle = getDate()
-    }
-
-    private fun getDate(): String{
-        val cal = Calendar.getInstance()
-        val date = SimpleDateFormat("LLLL", Locale.forLanguageTag("EN"))
-        val month = date.format(cal.time)
-        return month.substring(0, 1).toUpperCase() + month.substring(1)
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
