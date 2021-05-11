@@ -18,9 +18,15 @@ class SearchFragment : Fragment() {
         val viewRoot = inflater.inflate(R.layout.fragment_search, container, false)
         val tabLayout: TabLayout = viewRoot.findViewById(R.id.tabs)
         val viewPager: ViewPager = viewRoot.findViewById(R.id.container)
+        clearSubtitle()
         init(viewPager)
         tabLayout.setupWithViewPager(viewPager)
         return viewRoot
+    }
+
+    private fun clearSubtitle() {
+        val subtitle: String = resources.getString(R.string.null_string)
+        (activity as AppCompatActivity).supportActionBar!!.subtitle = subtitle
     }
 
     private fun init(viewPager: ViewPager){

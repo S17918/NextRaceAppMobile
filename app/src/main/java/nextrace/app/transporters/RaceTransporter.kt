@@ -1,4 +1,13 @@
 package nextrace.app.transporters
 
-class RaceTransporter {
+import nextrace.app.models.Race
+
+class RaceTransporter(val race: Race) {
+    companion object{
+        @JvmStatic lateinit var raceObject: Race
+    }
+
+    init {
+        raceObject = race
+    }
 }

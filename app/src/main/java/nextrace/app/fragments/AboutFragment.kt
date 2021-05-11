@@ -5,20 +5,20 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
 
 import nextrace.app.R
 
-/**
- * A simple [Fragment] subclass.
- */
 class AboutFragment : Fragment() {
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        clearSubtitle()
         return inflater.inflate(R.layout.fragment_about, container, false)
+    }
+
+    private fun clearSubtitle() {
+        val subtitle: String = resources.getString(R.string.null_string)
+        (activity as AppCompatActivity).supportActionBar!!.subtitle = subtitle
     }
 
 }

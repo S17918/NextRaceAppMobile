@@ -74,7 +74,7 @@
     <fragment
         android:id="@+id/race_details_fragment"
         android:name="nextrace.app.fragments.RaceDetailsFragment"
-        android:label="@string/null_string"
+        android:label=""
         tools:layout="@layout/fragment_race_details"/>
 
 </navigation>
