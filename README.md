@@ -1,5 +1,5 @@
 <p align="center">
-<img src="" width="75" alt="Logo"/>
+<!--<img src="" width="75" alt="Logo"/>-->
 </p>
 
 # Next Race Mobile Application
