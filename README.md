@@ -19,11 +19,14 @@
 >This Application was created to help motorsport enthusiasts find every important data about different races<br>
 
 ## Download
-<a id="raw-url" href="" target="_blank" download><img src="https://img.shields.io/badge/APK-1.0-green"/></a>
+<a id="raw-url" href="https://github.com/S17918/NextRaceAppMobile/blob/main/app/apk/NextRaceApp.apk?raw=true" target="_blank" download><img src="https://img.shields.io/badge/APK-1.0-green"/></a>
 
 ## Features
 List of features ready and TODOs for future development
-*
+* Show all future races from all categories.
+* Show races which have already taken place.
+* Search for races by category / country / track. 
+* Download data from api website. 
 
 Todo list:
 *
@@ -34,7 +37,9 @@ Todo list:
 * SQLite
 
 ## Screenshots
-<kbd></kbd>
+<kbd>![](app/screenshots/screen_1.png)</kbd>
+<kbd>![](app/screenshots/screen_2.png)</kbd>
+<kbd>![](app/screenshots/screen_3.png)</kbd>
 
 ## Status
 Project is: _in progress_
