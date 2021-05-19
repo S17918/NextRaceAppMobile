@@ -23,7 +23,10 @@
 
 ## Features
 List of features ready and TODOs for future development
-*
+* Show all future races from all categories.
+* Show races which have already taken place.
+* Search for races by category / country / track. 
+* Download data from api website. 
 
 Todo list:
 *
@@ -34,7 +37,9 @@ Todo list:
 * SQLite
 
 ## Screenshots
-<kbd></kbd>
+<kbd>![](app/screenshots/screen_1.png)</kbd>
+<kbd>![](app/screenshots/screen_2.png)</kbd>
+<kbd>![](app/screenshots/screen_3.png)</kbd>
 
 ## Status
 Project is: _in progress_
