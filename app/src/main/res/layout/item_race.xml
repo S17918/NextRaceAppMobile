@@ -247,7 +247,6 @@
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>
-
     </LinearLayout>
     <FrameLayout
         android:id="@+id/color_1"

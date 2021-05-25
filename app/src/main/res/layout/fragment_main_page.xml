@@ -5,10 +5,67 @@
     android:layout_height="match_parent"
     tools:context=".fragments.MainPageFragment"
     android:background="@color/colorPrimary">
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/main_page_item_list"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/regular"
+                android:textSize="22sp"
+                android:paddingTop="20dp"
+                android:paddingLeft="20dp"
+                android:text="Previous Race"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/regular"
+                android:textSize="22sp"
+                android:paddingTop="20dp"
+                android:paddingLeft="20dp"
+                android:text="Coming Up"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/main_page_previous_race_list"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/main_page_next_race_list"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="27sp"
+            android:fontFamily="@font/regular"
+            android:paddingTop="20dp"
+            android:paddingLeft="20dp"
+            android:text="This Month"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/main_page_item_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </LinearLayout>
 </FrameLayout>

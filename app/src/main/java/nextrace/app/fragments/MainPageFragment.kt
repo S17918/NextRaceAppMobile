@@ -12,6 +12,8 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import nextrace.app.R
+import nextrace.app.adapters.RecyclerViewNextRaceAdapter
+import nextrace.app.adapters.RecyclerViewPreviousRaceAdapter
 import nextrace.app.adapters.RecyclerViewRaceAdapter
 import nextrace.app.api.RaceApi
 import nextrace.app.api.RaceApiClient
@@ -49,9 +51,20 @@ class MainPageFragment : Fragment() {
             @RequiresApi(Build.VERSION_CODES.O)
             override fun onResponse(call: Call<List<Race>>, response: Response<List<Race>>) {
                 val recyclerView = view.findViewById<RecyclerView>(R.id.main_page_item_list)
+                val recyclerViewNextRace = view.findViewById<RecyclerView>(R.id.main_page_next_race_list)
+                val recyclerViewPreviousRace = view.findViewById<RecyclerView>(R.id.main_page_previous_race_list)
+
                 val layoutManager = LinearLayoutManager(view.context)
+                val layoutManagerPrev = LinearLayoutManager(view.context)
+                val layoutManagerNext = LinearLayoutManager(view.context)
                 val raceList = response.body() as MutableList<Race>
+
                 val finalRaceList: ArrayList<Race> = ArrayList()
+                val finalPreviousRaceList: ArrayList<Race> = ArrayList()
+                val finalComingUpRaceList: ArrayList<Race> = ArrayList()
+
+                val comingUpRaceList: ArrayList<Race> = ArrayList()
+                val previousRaceList: ArrayList<Race> = ArrayList()
 
                 raceList!!.forEach { race ->
                     val raceEvents: MutableList<Event> = race.eventList.events
@@ -63,14 +76,38 @@ class MainPageFragment : Fragment() {
                                 if(event.type == "Race"){
                                     finalRaceList.add(race)
                                 }
+                            }else{
+                                if(event.type == "Race"){
+                                    finalComingUpRaceList.add(race)
+                                }
+                            }
+                        }else{
+                            if(event.type == "Race"){
+                                finalPreviousRaceList.add(race)
                             }
                         }
                     }
                 }
 
+                previousRaceList.add(finalPreviousRaceList.last())
+
+                if(finalRaceList.isEmpty()){
+                    comingUpRaceList.add(finalComingUpRaceList.first())
+                }else{
+                    comingUpRaceList.add(finalRaceList.first())
+                }
+
                 val raceAdapter = RecyclerViewRaceAdapter(finalRaceList, this)
                 recyclerView.layoutManager = layoutManager
                 recyclerView.adapter = raceAdapter
+
+                val raceAdapterPreviousRaces = RecyclerViewPreviousRaceAdapter(previousRaceList, this)
+                recyclerViewPreviousRace.layoutManager = layoutManagerPrev
+                recyclerViewPreviousRace.adapter = raceAdapterPreviousRaces
+
+                val raceAdapterComingUpRaces= RecyclerViewNextRaceAdapter(comingUpRaceList, this)
+                recyclerViewNextRace.layoutManager = layoutManagerNext
+                recyclerViewNextRace.adapter = raceAdapterComingUpRaces
             }
 
             override fun onClick(pos: Int) {
