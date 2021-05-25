@@ -101,7 +101,7 @@ class MainPageFragment : Fragment() {
                     comingUpRaceList.add(finalRaceList.first())
                 }
 
-                val raceAdapter = RecyclerViewRaceAdapter(finalRaceList, this)
+                val raceAdapter = RecyclerViewRaceAdapter(finalRaceList, this, context)
                 recyclerView.layoutManager = layoutManager
                 recyclerView.adapter = raceAdapter
 

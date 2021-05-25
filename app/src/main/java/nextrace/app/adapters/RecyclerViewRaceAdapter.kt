@@ -1,5 +1,6 @@
 package nextrace.app.adapters
 
+import android.content.Context
 import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
@@ -7,7 +8,6 @@ import android.view.ViewGroup
 import android.widget.FrameLayout
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
@@ -19,7 +19,7 @@ import nextrace.app.models.Event
 import nextrace.app.models.Race
 import nextrace.app.transporters.RaceTransporter
 
-class RecyclerViewRaceAdapter(val raceList: List<Race>, val clickListener: ClickListener): RecyclerView.Adapter<RecyclerViewRaceAdapter.ViewHolder>() {
+class RecyclerViewRaceAdapter(val raceList: List<Race>, val clickListener: ClickListener, val context: Context?): RecyclerView.Adapter<RecyclerViewRaceAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         return ViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.item_race, parent, false))
@@ -31,7 +31,9 @@ class RecyclerViewRaceAdapter(val raceList: List<Race>, val clickListener: Click
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val race: Race = raceList[position]
-        holder.bind(race)
+        if (context != null) {
+            holder.bind(race, context)
+        }
 
         holder.itemView.setOnClickListener {
             val raceObject = RaceTransporter(race)
@@ -68,14 +70,24 @@ class RecyclerViewRaceAdapter(val raceList: List<Race>, val clickListener: Click
             color2 = itemView.findViewById(R.id.color_2)
         }
 
-        fun bind(race: Race){
+        fun bind(race: Race, context: Context){
             raceEvents = race.eventList.events
 
             raceEvents!!.forEach { it ->
                 if(it.type == "Race"){
                     raceDate?.text = it.date
-                    raceLocalTime?.text = it.localTime
-                    raceCETTime?.text = it.cetTime
+
+                    if(it.localTime.isBlank()){
+                        raceLocalTime?.text = context.getString(R.string.race_tba);
+                    }else{
+                        raceLocalTime?.text = it.localTime
+                    }
+
+                    if(it.cetTime.isBlank()){
+                        raceCETTime?.text = context.getString(R.string.race_tba);
+                    }else{
+                        raceCETTime?.text = it.cetTime
+                    }
                 }
             }
 

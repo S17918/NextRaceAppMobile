@@ -69,7 +69,7 @@ class Formula3Fragment : Fragment() {
                     }
                 }
 
-                val raceAdapter = RecyclerViewRaceAdapter(finalRaceList, this)
+                val raceAdapter = RecyclerViewRaceAdapter(finalRaceList, this, context)
                 recyclerView.layoutManager = layoutManager
                 recyclerView.adapter = raceAdapter
             }

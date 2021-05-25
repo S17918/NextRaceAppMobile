@@ -69,7 +69,7 @@ class PreviousRacesFragment : Fragment() {
                     }
                 }
 
-                val raceAdapter = RecyclerViewRaceAdapter(finalRaceList.asReversed(), this)
+                val raceAdapter = RecyclerViewRaceAdapter(finalRaceList.asReversed(), this, context)
                 recyclerView.layoutManager = layoutManager
                 recyclerView.adapter = raceAdapter
             }
