@@ -89,10 +89,14 @@ class MainPageFragment : Fragment() {
                     }
                 }
 
-                previousRaceList.add(finalPreviousRaceList.last())
+                if(finalPreviousRaceList.isNotEmpty()){
+                    previousRaceList.add(finalPreviousRaceList.last())
+                }
 
                 if(finalRaceList.isEmpty()){
-                    comingUpRaceList.add(finalComingUpRaceList.first())
+                    if (finalComingUpRaceList.isNotEmpty()) {
+                        comingUpRaceList.add(finalComingUpRaceList.first())
+                    }
                 }else{
                     comingUpRaceList.add(finalRaceList.first())
                 }
