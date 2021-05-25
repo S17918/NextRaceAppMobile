@@ -19,7 +19,7 @@
 >This Application was created to help motorsport enthusiasts find every important data about different races<br>
 
 ## Download
-<a id="raw-url" href="https://github.com/S17918/NextRaceAppMobile/blob/main/app/apk/NextRaceApp.apk?raw=true" target="_blank" download><img src="https://img.shields.io/badge/APK-1.0-green"/></a>
+<a id="raw-url" href="https://github.com/S17918/NextRaceAppMobile/blob/main/app/apk/NextRaceApp.apk?raw=true" target="_blank" download><img src="https://img.shields.io/badge/APK-1.1-green"/></a>
 
 ## Features
 List of features ready and TODOs for future development
