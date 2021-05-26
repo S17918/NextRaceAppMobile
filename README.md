@@ -1,5 +1,5 @@
 <p align="center">
-<!--<img src="" width="75" alt="Logo"/>-->
+<img src="app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png" width="120" alt="Logo"/>
 </p>
 
 # Next Race Mobile Application
