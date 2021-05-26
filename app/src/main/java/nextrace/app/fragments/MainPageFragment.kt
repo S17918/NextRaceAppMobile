@@ -6,6 +6,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
@@ -66,6 +67,8 @@ class MainPageFragment : Fragment() {
                 val comingUpRaceList: ArrayList<Race> = ArrayList()
                 val previousRaceList: ArrayList<Race> = ArrayList()
 
+                val textView: TextView = view.findViewById(R.id.main_page_error_message)
+
                 raceList!!.forEach { race ->
                     val raceEvents: MutableList<Event> = race.eventList.events
                     raceEvents.forEach { event ->
@@ -87,6 +90,12 @@ class MainPageFragment : Fragment() {
                             }
                         }
                     }
+                }
+
+                if(finalRaceList.isNotEmpty()){
+                    textView.text = context?.getString(R.string.null_string)
+                }else{
+                    textView.text = context?.getString(R.string.main_page_error)
                 }
 
                 if(finalPreviousRaceList.isNotEmpty()){

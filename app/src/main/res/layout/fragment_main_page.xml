@@ -63,9 +63,22 @@
             android:paddingLeft="20dp"
             android:text="This Month"/>
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/main_page_item_list"
+        <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/main_page_error_message"
+                android:textSize="18sp"
+                android:layout_marginStart="20dp"
+                android:fontFamily="@font/regular"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/main_page_item_list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+        </FrameLayout>
     </LinearLayout>
 </FrameLayout>

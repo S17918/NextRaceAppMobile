@@ -8,6 +8,8 @@
     <string name="search_by_category">Category</string>
     <string name="search_by_country">Country</string>
     <string name="search_by_track">Track</string>
+    <string name="search_previous">Search in previous races</string>
+    <string name="search_error_message">No races found!</string>
     <string name="drawer_divider_most_popular">Most Popular</string>
     <string name="drawer_item_formula_1">Formula 1</string>
     <string name="drawer_item_formula_2">Formula 2</string>
@@ -25,8 +27,8 @@
     <string name="hint_category">Category Name</string>
     <string name="hint_country">Country Name</string>
     <string name="hint_track">Track Name</string>
-
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="main_page_error">No races this month!</string>
     <string name="null_string" />
     <string name="race_tba">TBA</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
