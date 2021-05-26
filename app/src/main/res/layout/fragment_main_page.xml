@@ -21,8 +21,8 @@
                 android:fontFamily="@font/regular"
                 android:textSize="22sp"
                 android:paddingTop="20dp"
-                android:paddingLeft="20dp"
-                android:text="Previous Race"/>
+                android:paddingStart="20dp"
+                android:text="@string/previous_race"/>
 
             <TextView
                 android:layout_width="match_parent"
@@ -31,8 +31,8 @@
                 android:fontFamily="@font/regular"
                 android:textSize="22sp"
                 android:paddingTop="20dp"
-                android:paddingLeft="20dp"
-                android:text="Coming Up"/>
+                android:paddingStart="20dp"
+                android:text="@string/coming_up"/>
 
         </LinearLayout>
 
@@ -60,8 +60,8 @@
             android:textSize="27sp"
             android:fontFamily="@font/regular"
             android:paddingTop="20dp"
-            android:paddingLeft="20dp"
-            android:text="This Month"/>
+            android:paddingStart="20dp"
+            android:text="@string/this_month"/>
 
         <FrameLayout
             android:layout_width="match_parent"
