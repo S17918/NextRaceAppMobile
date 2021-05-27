@@ -21,31 +21,32 @@
             android:paddingTop="70dp">
 
             <Spinner
+                android:theme="@style/Spinner"
                 android:id="@+id/spinner_years"
                 android:layout_width="match_parent"
                 android:layout_height="fill_parent"
                 android:layout_weight="1"
                 android:layout_marginLeft="20dp"
-                android:layout_marginRight="10dp"/>
+                android:layout_marginRight="5dp"/>
 
             <Spinner
+                android:theme="@style/Spinner"
                 android:id="@+id/spinner_months"
                 android:layout_width="match_parent"
                 android:layout_height="fill_parent"
-                android:layout_weight="1"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="20dp"/>
+                android:layout_weight="0.95"
+                android:layout_marginRight="5dp"/>
 
             <Button
                 android:id="@+id/button_find_date"
                 android:text="@string/drawer_item_search"
                 android:fontFamily="@font/regular"
                 android:background="@color/colorBackground"
-                android:layout_marginLeft="20dp"
+                android:layout_marginLeft="5dp"
                 android:layout_marginRight="20dp"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"/>
+                android:layout_weight="1.1"/>
         </LinearLayout>
     </LinearLayout>
 
