@@ -1,5 +1,6 @@
 package nextrace.app.api
 
+import nextrace.app.models.Category
 import nextrace.app.models.Race
 import retrofit2.Call
 import retrofit2.http.GET
@@ -8,6 +9,9 @@ import retrofit2.http.Path
 interface RaceApi {
     @GET("/api/races")
     fun getRaces(): Call<List<Race>>
+
+    @GET("/api/categories")
+    fun getCategories(): Call<List<Category>>
 
     @GET("/api/races/category/Formula 1")
     fun getRacesFormula1(): Call<List<Race>>

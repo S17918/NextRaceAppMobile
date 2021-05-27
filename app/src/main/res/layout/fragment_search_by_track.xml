@@ -15,7 +15,7 @@
         android:layout_marginBottom="10dp">
 
         <Switch
-            android:id="@+id/switch_search_country"
+            android:id="@+id/switch_search_track"
             android:paddingTop="70dp"
             android:layout_marginStart="25dp"
             android:layout_marginEnd="45dp"

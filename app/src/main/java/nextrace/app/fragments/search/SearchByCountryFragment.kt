@@ -12,6 +12,7 @@ import android.view.ViewGroup
 import android.view.inputmethod.InputMethodManager
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Switch
 import android.widget.TextView
 import androidx.annotation.RequiresApi
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -53,6 +54,8 @@ class SearchByCountryFragment : Fragment(), ClickListener {
     }
 
     private fun getData(view: View, input: String) {
+        val switch: Switch = view.findViewById(R.id.switch_search_country)
+        val switchState: Boolean = switch.isChecked
         val raceApi: RaceApi = RaceApiClient().buildService(RaceApi::class.java)
         val textView: TextView = view.findViewById(R.id.search_country_error_message)
         val call: Call<List<Race>> = raceApi.getRacesByCountryName(input)
@@ -70,19 +73,29 @@ class SearchByCountryFragment : Fragment(), ClickListener {
 
                 if(raceList.isNotEmpty()){
                     textView.text = context?.getString(R.string.null_string)
-                    raceList.forEach { race ->
-                        val raceEvents: MutableList<Event> = race.eventList.events
-                        raceEvents.forEach { event ->
-                            val date = LocalDate.of(Integer.parseInt(event.date.substring(0,4)), Integer.parseInt(event.date.substring(5, 7)), Integer.parseInt(event.date.substring(8,10)))
-                            val today = LocalDate.of(Calendar.getInstance().get(Calendar.YEAR), Calendar.getInstance().get(Calendar.MONTH)+1, Calendar.getInstance().get(Calendar.DAY_OF_MONTH))
-                            if(date.isAfter(today)){
-                                if(event.type == "Race"){
-                                    finalRaceList.add(race)
+                    if(switchState){
+                        raceList.forEach { race ->
+                            finalRaceList.add(race)
+                        }
+                    }else{
+                        raceList.forEach { race ->
+                            val raceEvents: MutableList<Event> = race.eventList.events
+                            raceEvents.forEach { event ->
+                                val date = LocalDate.of(Integer.parseInt(event.date.substring(0,4)), Integer.parseInt(event.date.substring(5, 7)), Integer.parseInt(event.date.substring(8,10)))
+                                val today = LocalDate.of(Calendar.getInstance().get(Calendar.YEAR), Calendar.getInstance().get(Calendar.MONTH)+1, Calendar.getInstance().get(Calendar.DAY_OF_MONTH))
+                                if(date.isAfter(today)){
+                                    if(event.type == "Race"){
+                                        finalRaceList.add(race)
+                                    }
                                 }
                             }
                         }
                     }
                 }else{
+                    textView.text = context?.getString(R.string.search_error_message)
+                }
+
+                if(finalRaceList.isEmpty()){
                     textView.text = context?.getString(R.string.search_error_message)
                 }
 

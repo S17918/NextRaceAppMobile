@@ -31,28 +31,24 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
-            <EditText
-                android:hint="@string/hint_category"
-                android:fontFamily="@font/regular"
-                android:layout_marginStart="20dp"
-                android:id="@+id/editText_category"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                app:layout_constraintTop_toTopOf="parent"
+            <Spinner
+                android:id="@+id/spinner_categories"
+                android:layout_width="match_parent"
+                android:layout_height="fill_parent"
                 android:layout_weight="1"
-                android:inputType="text"
-                android:importantForAutofill="no" />
+                android:layout_marginLeft="15dp"
+                android:theme="@style/Spinner"/>
 
             <Button
                 android:id="@+id/button_find_category"
                 android:text="@string/drawer_item_search"
                 android:fontFamily="@font/regular"
                 android:background="@color/colorBackground"
-                android:layout_marginLeft="20dp"
+                android:layout_marginLeft="5dp"
                 android:layout_marginRight="20dp"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="2"/>
+                android:layout_weight="2.5"/>
         </LinearLayout>
     </LinearLayout>
 
