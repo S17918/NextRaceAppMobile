@@ -32,4 +32,7 @@ interface RaceApi {
 
     @GET("/api/races/track/{name}")
     fun getRacesByTrackName(@Path(value = "name", encoded = true) value: String): Call<List<Race>>
+
+    @GET("/api/races/{year}/{month}")
+    fun getRacesByDate(@Path(value = "year", encoded = true) year: String, @Path(value = "month", encoded = true) month: String): Call<List<Race>>
 }
