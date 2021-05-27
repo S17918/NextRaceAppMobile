@@ -13,7 +13,7 @@
 
     <fragment
         android:id="@+id/all_races_fragment"
-        android:name="nextrace.app.fragments.AllRacesFragment"
+        android:name="nextrace.app.fragments.race.AllRacesFragment"
         android:label="@string/drawer_item_all_races"
         tools:layout="@layout/fragment_all_races"/>
 
@@ -55,25 +55,25 @@
 
     <fragment
         android:id="@+id/previous_races_fragment"
-        android:name="nextrace.app.fragments.PreviousRacesFragment"
+        android:name="nextrace.app.fragments.race.PreviousRacesFragment"
         android:label="@string/drawer_item_previous_races"
         tools:layout="@layout/fragment_previous_races"/>
 
     <fragment
         android:id="@+id/about_fragment"
-        android:name="nextrace.app.fragments.AboutFragment"
+        android:name="nextrace.app.fragments.misc.AboutFragment"
         android:label="@string/drawer_item_about"
         tools:layout="@layout/fragment_about"/>
 
     <fragment
         android:id="@+id/donate_fragment"
-        android:name="nextrace.app.fragments.DonateFragment"
+        android:name="nextrace.app.fragments.misc.DonateFragment"
         android:label="@string/drawer_item_donate"
         tools:layout="@layout/fragment_donate"/>
 
     <fragment
         android:id="@+id/race_details_fragment"
-        android:name="nextrace.app.fragments.RaceDetailsFragment"
+        android:name="nextrace.app.fragments.race.details.RaceDetailsFragment"
         android:label=""
         tools:layout="@layout/fragment_race_details"/>
 

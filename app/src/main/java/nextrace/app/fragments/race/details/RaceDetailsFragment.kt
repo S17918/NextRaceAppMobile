@@ -1,4 +1,4 @@
-package nextrace.app.fragments
+package nextrace.app.fragments.race.details
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
