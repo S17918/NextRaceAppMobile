@@ -19,37 +19,37 @@
 
     <fragment
         android:id="@+id/search_fragment"
-        android:name="nextrace.app.fragments.SearchFragment"
+        android:name="nextrace.app.fragments.search.SearchFragment"
         android:label="@string/drawer_item_search"
         tools:layout="@layout/fragment_search"/>
 
     <fragment
         android:id="@+id/formula_1_fragment"
-        android:name="nextrace.app.fragments.Formula1Fragment"
+        android:name="nextrace.app.fragments.popular.Formula1Fragment"
         android:label="@string/drawer_item_formula_1"
         tools:layout="@layout/fragment_formula1"/>
 
     <fragment
         android:id="@+id/formula_2_fragment"
-        android:name="nextrace.app.fragments.Formula2Fragment"
+        android:name="nextrace.app.fragments.popular.Formula2Fragment"
         android:label="@string/drawer_item_formula_2"
         tools:layout="@layout/fragment_formula2"/>
 
     <fragment
         android:id="@+id/formula_3_fragment"
-        android:name="nextrace.app.fragments.Formula3Fragment"
+        android:name="nextrace.app.fragments.popular.Formula3Fragment"
         android:label="@string/drawer_item_formula_3"
         tools:layout="@layout/fragment_formula3"/>
 
     <fragment
         android:id="@+id/formula_e_fragment"
-        android:name="nextrace.app.fragments.FormulaEFragment"
+        android:name="nextrace.app.fragments.popular.FormulaEFragment"
         android:label="@string/drawer_item_formula_e"
         tools:layout="@layout/fragment_formula_e"/>
 
     <fragment
         android:id="@+id/dtm_fragment"
-        android:name="nextrace.app.fragments.DtmFragment"
+        android:name="nextrace.app.fragments.popular.DtmFragment"
         android:label="@string/drawer_item_dtm"
         tools:layout="@layout/fragment_dtm"/>
 

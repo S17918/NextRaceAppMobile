@@ -1,4 +1,4 @@
-package nextrace.app.fragments
+package nextrace.app.fragments.search
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -34,6 +34,7 @@ class SearchFragment : Fragment() {
         adapter.addFragment(SearchByCategoryFragment(), resources.getString(R.string.search_by_category))
         adapter.addFragment(SearchByCountryFragment(), resources.getString(R.string.search_by_country))
         adapter.addFragment(SearchByTrackFragment(), resources.getString(R.string.search_by_track))
+        adapter.addFragment(SearchByDateFragment(), resources.getString(R.string.search_by_date))
         viewPager.adapter = adapter
     }
 }

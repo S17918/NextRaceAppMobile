@@ -8,6 +8,7 @@
     <string name="search_by_category">Category</string>
     <string name="search_by_country">Country</string>
     <string name="search_by_track">Track</string>
+    <string name="search_by_date">Date</string>
     <string name="search_previous">Search in previous races</string>
     <string name="search_error_message">No races found!</string>
     <string name="drawer_divider_most_popular">Most Popular</string>
@@ -34,4 +35,32 @@
     <string name="previous_race">Previous Race</string>
     <string name="coming_up">Coming Up</string>
     <string name="this_month">This Month</string>
+
+    <string-array name="months">
+        <item>January</item>
+        <item>February</item>
+        <item>March</item>
+        <item>April</item>
+        <item>May</item>
+        <item>June</item>
+        <item>July</item>
+        <item>August</item>
+        <item>September</item>
+        <item>October</item>
+        <item>November</item>
+        <item>December</item>
+    </string-array>
+
+    <string-array name="years">
+        <item>2020</item>
+        <item>2021</item>
+        <item>2022</item>
+        <item>2023</item>
+        <item>2024</item>
+        <item>2025</item>
+        <item>2026</item>
+        <item>2027</item>
+        <item>2028</item>
+        <item>2029</item>
+    </string-array>
 </resources>

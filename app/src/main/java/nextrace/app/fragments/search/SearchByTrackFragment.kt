@@ -1,4 +1,4 @@
-package nextrace.app.fragments
+package nextrace.app.fragments.search
 
 import android.app.Activity
 import android.content.Context
@@ -29,17 +29,18 @@ import retrofit2.Callback
 import retrofit2.Response
 import java.time.LocalDate
 import java.util.*
+import kotlin.collections.ArrayList
 
-class SearchByCountryFragment : Fragment(), ClickListener {
+class SearchByTrackFragment : Fragment(), ClickListener {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        return inflater.inflate(R.layout.fragment_search_by_country, container, false)
+        return inflater.inflate(R.layout.fragment_search_by_track, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        val editText: EditText = view.findViewById(R.id.editText_country)
-        val textView: TextView = view.findViewById(R.id.search_country_error_message)
-        val button: Button = view.findViewById(R.id.button_find_country)
+        val editText: EditText = view.findViewById(R.id.editText_track)
+        val textView: TextView = view.findViewById(R.id.search_track_error_message)
+        val button: Button = view.findViewById(R.id.button_find_track)
         button.setOnClickListener {
             val input: String = editText.text.toString()
             if(input.isNotEmpty()){
@@ -54,8 +55,8 @@ class SearchByCountryFragment : Fragment(), ClickListener {
 
     private fun getData(view: View, input: String) {
         val raceApi: RaceApi = RaceApiClient().buildService(RaceApi::class.java)
-        val textView: TextView = view.findViewById(R.id.search_country_error_message)
-        val call: Call<List<Race>> = raceApi.getRacesByCountryName(input)
+        val textView: TextView = view.findViewById(R.id.search_track_error_message)
+        val call: Call<List<Race>> = raceApi.getRacesByTrackName(input)
         call.enqueue(object : Callback<List<Race>>, ClickListener {
             override fun onFailure(call: Call<List<Race>>, t: Throwable) {
                 Log.d("TAG", "Response = $t")
@@ -63,7 +64,7 @@ class SearchByCountryFragment : Fragment(), ClickListener {
 
             @RequiresApi(Build.VERSION_CODES.O)
             override fun onResponse(call: Call<List<Race>>, response: Response<List<Race>>) {
-                val recyclerView = view.findViewById<RecyclerView>(R.id.item_race_list_by_country)
+                val recyclerView = view.findViewById<RecyclerView>(R.id.item_race_list_by_track)
                 val layoutManager = LinearLayoutManager(view.context)
                 val raceList = response.body() as MutableList<Race>
                 val finalRaceList: ArrayList<Race> = ArrayList()
@@ -99,7 +100,7 @@ class SearchByCountryFragment : Fragment(), ClickListener {
     }
 
     private fun clearRecyclerView(view: View){
-        val recyclerView = view.findViewById<RecyclerView>(R.id.item_race_list_by_country)
+        val recyclerView = view.findViewById<RecyclerView>(R.id.item_race_list_by_track)
         val layoutManager = LinearLayoutManager(view.context)
         val raceList = ArrayList<Race>()
         val raceAdapter = RecyclerViewRaceAdapter(raceList, this, context)

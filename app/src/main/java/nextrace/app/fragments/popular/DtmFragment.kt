@@ -1,4 +1,4 @@
-package nextrace.app.fragments
+package nextrace.app.fragments.popular
 
 import android.os.Build
 import android.os.Bundle
@@ -25,11 +25,15 @@ import retrofit2.Response
 import java.time.LocalDate
 import java.util.*
 
-class Formula3Fragment : Fragment() {
+class DtmFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         clearSubtitle()
-        return inflater.inflate(R.layout.fragment_formula3, container, false)
+        return inflater.inflate(R.layout.fragment_dtm, container, false)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        getData(view)
     }
 
     private fun clearSubtitle() {
@@ -37,13 +41,9 @@ class Formula3Fragment : Fragment() {
         (activity as AppCompatActivity).supportActionBar!!.subtitle = subtitle
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        getData(view)
-    }
-
     private fun getData(view: View) {
         val raceApi: RaceApi = RaceApiClient().buildService(RaceApi::class.java)
-        val call: Call<List<Race>> = raceApi.getRacesFormula3()
+        val call: Call<List<Race>> = raceApi.getRacesDTM()
         call.enqueue(object : Callback<List<Race>>, ClickListener {
             override fun onFailure(call: Call<List<Race>>, t: Throwable) {
                 Log.d("TAG", "Response = $t")
@@ -51,7 +51,7 @@ class Formula3Fragment : Fragment() {
 
             @RequiresApi(Build.VERSION_CODES.O)
             override fun onResponse(call: Call<List<Race>>, response: Response<List<Race>>) {
-                val recyclerView = view.findViewById<RecyclerView>(R.id.item_formula3_race_list)
+                val recyclerView = view.findViewById<RecyclerView>(R.id.item_dtm_race_list)
                 val layoutManager = LinearLayoutManager(view.context)
                 val raceList = response.body() as MutableList<Race>
                 val finalRaceList: ArrayList<Race> = ArrayList()

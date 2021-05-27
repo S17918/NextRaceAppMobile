@@ -61,7 +61,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/colorPrimary"
-        tools:context=".fragments.SearchByCategoryFragment">
+        tools:context=".fragments.search.SearchByCategoryFragment">
 
         <TextView
             android:id="@+id/search_country_error_message"

@@ -14,37 +14,30 @@
         android:orientation="vertical"
         android:layout_marginBottom="10dp">
 
-        <Switch
-            android:id="@+id/switch_search_category"
-            android:paddingTop="70dp"
-            android:layout_marginStart="25dp"
-            android:layout_marginEnd="45dp"
-            android:paddingBottom="5dp"
-            android:layout_marginBottom="10dp"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:fontFamily="@font/regular"
-            android:text="@string/search_previous"
-            android:layout_weight="1"/>
-
         <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <EditText
-                android:hint="@string/hint_category"
-                android:fontFamily="@font/regular"
-                android:layout_marginStart="20dp"
-                android:id="@+id/editText_category"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                app:layout_constraintTop_toTopOf="parent"
+            android:orientation="horizontal"
+            android:paddingTop="70dp">
+
+            <Spinner
+                android:id="@+id/spinner_years"
+                android:layout_width="match_parent"
+                android:layout_height="fill_parent"
                 android:layout_weight="1"
-                android:inputType="text"
-                android:importantForAutofill="no" />
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="10dp"/>
+
+            <Spinner
+                android:id="@+id/spinner_months"
+                android:layout_width="match_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="20dp"/>
 
             <Button
-                android:id="@+id/button_find_category"
+                android:id="@+id/button_find_date"
                 android:text="@string/drawer_item_search"
                 android:fontFamily="@font/regular"
                 android:background="@color/colorBackground"
@@ -52,7 +45,7 @@
                 android:layout_marginRight="20dp"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="2"/>
+                android:layout_weight="1"/>
         </LinearLayout>
     </LinearLayout>
 
@@ -61,10 +54,10 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/colorPrimary"
-        tools:context=".fragments.search.SearchByCategoryFragment">
+        tools:context=".fragments.search.SearchByDateFragment">
 
         <TextView
-            android:id="@+id/search_category_error_message"
+            android:id="@+id/search_date_error_message"
             android:textSize="20sp"
             android:layout_marginStart="25dp"
             android:fontFamily="@font/regular"
@@ -72,7 +65,7 @@
             android:layout_height="wrap_content"/>
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/item_race_list_by_category"
+            android:id="@+id/item_race_list_by_date"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
     </FrameLayout>

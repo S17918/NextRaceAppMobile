@@ -1,4 +1,4 @@
-package nextrace.app.fragments
+package nextrace.app.fragments.popular
 
 import android.os.Build
 import android.os.Bundle
@@ -25,11 +25,11 @@ import retrofit2.Response
 import java.time.LocalDate
 import java.util.*
 
-class FormulaEFragment : Fragment() {
+class Formula2Fragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         clearSubtitle()
-        return inflater.inflate(R.layout.fragment_formula_e, container, false)
+        return inflater.inflate(R.layout.fragment_formula2, container, false)
     }
 
     private fun clearSubtitle() {
@@ -43,7 +43,7 @@ class FormulaEFragment : Fragment() {
 
     private fun getData(view: View) {
         val raceApi: RaceApi = RaceApiClient().buildService(RaceApi::class.java)
-        val call: Call<List<Race>> = raceApi.getRacesFormulaE()
+        val call: Call<List<Race>> = raceApi.getRacesFormula2()
         call.enqueue(object : Callback<List<Race>>, ClickListener {
             override fun onFailure(call: Call<List<Race>>, t: Throwable) {
                 Log.d("TAG", "Response = $t")
@@ -51,7 +51,7 @@ class FormulaEFragment : Fragment() {
 
             @RequiresApi(Build.VERSION_CODES.O)
             override fun onResponse(call: Call<List<Race>>, response: Response<List<Race>>) {
-                val recyclerView = view.findViewById<RecyclerView>(R.id.item_formulae_race_list)
+                val recyclerView = view.findViewById<RecyclerView>(R.id.item_formula2_race_list)
                 val layoutManager = LinearLayoutManager(view.context)
                 val raceList = response.body() as MutableList<Race>
                 val finalRaceList: ArrayList<Race> = ArrayList()
